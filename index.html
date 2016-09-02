@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" >
+	<meta name="KEYWords" contect="Lokya的Angularjs小demo">
+    <meta name="DEscription" contect="使用Angularjs的相关内容写一个小demo">
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="css/base.css" type="text/css" />
+	<title>My Angularjs Demo</title>
+	<style>
+		.errorMsgBox{
+			text-align: center;
+		}
+		.errorMsg{
+			color: red;
+			font-size: 16px;
+			border:1px solid red;
+		}
+		.codeWord{
+			color: #000;
+			font-size: 20px;
+			margin-top: 33px;
+			margin-left: 20px;
+		}
+		.title{
+			text-align: center;
+		}
+		.title label{
+			font-size: 22px;
+			margin-bottom: 40px;
+			margin-top: 10px;
+			font-family: "Microsoft YaHei",montserrat;
+			color: #E25E8E;
+		}
+	</style>
+</head>
+<body ng-app="mydemo" ng-controller="Mylogin">
+	<div class="container">
+		<form class="loginForm">	
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="title">
+						<label for="">基于angularjs的登录小demo</label>
+					</div>
+				</div>
+				<div class="col-xs-12">
+					<div class="form-group">
+					    <label for="">手机号:</label>
+					    <input type="text" class="form-control input-lg" ng-model="phone" placeholder="请输入手机号">
+					</div>
+				</div>	
+				<div class="col-xs-12">
+					<div class="form-group">
+					    <label for="">密码:</label>
+					    <input type="password" class="form-control input-lg" ng-model="pwd" placeholder="请输入您的密码">
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="form-group">
+					    <label for="">验证码:</label>
+					    <input type="password" class="form-control input-lg" ng-model="code" placeholder="请输入验证码">
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<label class="codeWord" for="">ASDK</label>
+				</div>
+				<div class="col-xs-12 errorMsgBox">
+					<label ng-show="errorMessage" class="errorMsg">{{errorWord}}</label>	
+				</div>				
+				<div class="col-xs-12">
+					<button type="button" ng-click="Enter()" class="btn btn-info btn-lg btn-block">登录</button>
+				</div>			
+			</div>			
+		</form>		
+	</div>
+</body>
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/angular/angular.min.js"></script>
+<script src="js/app.js"></script>
+</html>
